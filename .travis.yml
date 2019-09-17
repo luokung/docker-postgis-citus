@@ -1,7 +1,9 @@
 sudo: required
 services: [ docker ]
 script:
-  - cd 10 && docker build -t luokung/postgis-citus:10 .
-  - cd 10 && docker build -t luokung/postgis-citus:10-alpine . -f Dockerfile-alpine
-  - cd 11 && docker build -t luokung/postgis-citus:11 .
-  - cd 11 && docker build -t luokung/postgis-citus:11-alpine . -f Dockerfile-alpine
+  - cd ./10
+  - docker build -t luokung/postgis-citus:10 .
+  - docker build -t luokung/postgis-citus:10-alpine . -f Dockerfile-alpine
+  - cd ../11
+  - docker build -t luokung/postgis-citus:11 .
+  - docker build -t luokung/postgis-citus:11-alpine . -f Dockerfile-alpine
